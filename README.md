@@ -1,6 +1,6 @@
 # Userscripts
 
-A collection of userscripts to enhance your browsing experience.
+A collection of userscripts to enhance my browsing experience.
 
 ## Table of Contents
 
