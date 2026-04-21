@@ -1,14 +1,14 @@
 // ==UserScript==
 // @name         GitHub Folder Download
-// @namespace    https://github.com/
-// @version      1.1.0
+// @namespace    https://github.com/definite-d/userscripts
+// @version      1.1.1
 // @description  Adds "Download this folder" directly into GitHub's native Code / More options menu using the current Primer ActionList structure.
 // @author       Afam-Ifediogor, U. Divine
 // @license      MIT
 // @homepageURL  https://github.com/definite-d/userscripts
 // @supportURL   https://github.com/definite-d/userscripts/issues
-// @updateURL    https://raw.githubusercontent.com/definite-d/userscripts/main/scripts/github-add-folder-download-option.js
-// @downloadURL  https://raw.githubusercontent.com/definite-d/userscripts/main/scripts/github-add-folder-download-option.js
+// @updateURL    https://raw.githubusercontent.com/definite-d/userscripts/main/scripts/github-add-folder-download-option.user.js
+// @downloadURL  https://raw.githubusercontent.com/definite-d/userscripts/main/scripts/github-add-folder-download-option.user.js
 // @icon         https://github.com/favicon.ico
 // @match        https://github.com/*
 // @grant        none
