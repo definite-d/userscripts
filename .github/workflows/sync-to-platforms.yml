@@ -1,0 +1,33 @@
+name: Sync Userscripts to Platforms
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'scripts/*.user.js'
+  workflow_dispatch:
+
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Get changed files
+        id: changed
+        run: |
+          changed_files=$(git diff --name-only HEAD~1 HEAD -- 'scripts/*.user.js' | tr '\n' ' ')
+          echo "changed=$changed_files" >> $GITHUB_OUTPUT
+          echo "Changed scripts: $changed_files"
+
+      - name: Summary
+        run: |
+          echo "## Userscript Sync Triggered 🚀" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "The following scripts were updated:" >> $GITHUB_STEP_SUMMARY
+          echo "- ${{ steps.changed.outputs.changed }}" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "**Platforms will auto-sync via webhooks:**" >> $GITHUB_STEP_SUMMARY
+          echo "- GreasyFork (via webhook)" >> $GITHUB_STEP_SUMMARY
+          echo "- OpenUserJS (via webhook)" >> $GITHUB_STEP_SUMMARY
